@@ -5,7 +5,7 @@
  */
 html {
   box-sizing: border-box;
-}
+}  
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -18,8 +18,38 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  /* my css starts */
+  /* position: relative; */
+  font-family: 'Source Sans Pro', sans-serif;
+
 }
 
 /*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+ * Additional CSS can be defined below or in other CSS files, as per instructions*/
+ body header
+{
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  /* text-align: center;  */
+  background-color:inherit;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+  height: 400px;
+  font-family: 'Source Sans Pro', sans-serif;
+} 
+main
+{
+  width: 90%;
+  background-color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  text-align: center;
+ 
+
+}
+h2#h2 {
+  font-weight: normal;
+}

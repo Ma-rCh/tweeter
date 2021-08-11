@@ -1,0 +1,39 @@
+section.new-tweet form {
+  width: 100%; 
+  font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75em;
+
+ }
+ section.new-tweet form textarea {
+   background-color: inherit;
+   padding-bottom: 0.5em;
+   border: none;
+   height: min-content;
+ }
+ /* section.new-tweet label {
+  font-family: 'Source Sans Pro', sans-serif;
+ } */
+body main section form div {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: blue; */
+  font-family: 'Bungee', cursive;
+
+}
+section form div button {
+  background-color: #4056A1;
+}
+section > form > div {
+  border-top: 5px solid grey;
+  padding: 0.5em;
+}
+main > section
+{
+  width: 60%; 
+}
+section > form > label {
+  font-size: 1.5em;
+  font-weight: bolder;
+}
