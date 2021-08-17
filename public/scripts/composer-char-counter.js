@@ -7,6 +7,6 @@ $(document).ready(function () {
       $(this).closest('section').find('output').addClass('warning');
     }
   })
-  console.log('hello');
+  // console.log('hello');
 
 });
