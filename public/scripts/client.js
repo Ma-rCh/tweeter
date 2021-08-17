@@ -98,4 +98,34 @@ const renderTweets = tweets => {
 
 }
  renderTweets(data);
+
+ $( "form" ).on( "submit", function( event ) {
+  event.preventDefault();
+  //console.log( $( this ).serialize() );
+  $.post('/tweets', $( this ).serialize())
+  .then(()=> {
+    $('.counter').text('140');    //clear the counter
+    $('textarea').val("");  
+    // console.log('1');
+  })
+  .fail(error => console.log(error));
+});
+$.get('/tweets')
+.then((data) => {
+  renderTweets(data);
+  $('textarea').focus();
+});
+
+
+//toggle effects in create new tweeets on top right corner
+$('.createTweets').click(() => {
+  $('.new-tweet').toggle('slow', () => {
+    $('textarea').focus();
+  });
+});
+
+//hide the compose tweet box on load in
+$('.new-tweet').hide();
+
+
 });
