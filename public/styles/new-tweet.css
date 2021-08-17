@@ -37,6 +37,22 @@ section > form > label {
   font-size: 1.5em;
   font-weight: bolder;
 }
-/* .warning {
+.warning {
   color: red;
+}
+/* #tweet-text :hover {
+  text-shadow: 0 0 .65px #333, 0 0 .65px #333;  
+  box-shadow: 10px 10px 4px #546288;
 } */
+/* .tweetBox {
+  text-align: center;
+  border: solid 2px;
+  margin-bottom: 40px;
+} */
+.tweetBox{
+  border-bottom: 5px solid grey;
+}
+.tweetBox:hover {
+  text-shadow: 0 0 .65px #333, 0 0 .65px #333;  
+  box-shadow: 10px 10px 4px #546288;
+}
