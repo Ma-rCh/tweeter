@@ -74,7 +74,9 @@ footer {
 .tweetBox:hover .atPerson {
   visibility: visible;
 }
-
+.fontAwesome:hover {
+  color: rgb(230, 163, 41);
+}
 /*
 I use the text-shadow instead of font-weight to avoid the text moving 
  */
