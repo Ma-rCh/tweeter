@@ -73,44 +73,50 @@ const createTweetElement = tweet => {
 
 };
 
-$(document).ready(() => {
-  const tweetData= {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
-    "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-    "created_at": 1461116232227
- }
 
-// const $tweet = createTweetElement(tweetData);
-// console.log($tweet); 
-// $('.tweetContainer').append($tweet);
-// $('.tweetContainer').prepend(createTweetElement(tweet));
+
 const renderTweets = tweets => {
-  for (const tweet of tweets) {
-    $('.tweetContainer').prepend(createTweetElement(tweet));
-    console.log(tweet); 
+    for (const tweet of tweets) {
+      $('.tweetContainer').prepend(createTweetElement(tweet));
+      console.log(tweet); 
+    };
+  }
+  //initial tweets
+const loadTweets = () => {
+    $.get('/tweets')
+      .then(data => {
+        renderTweets([data[data.length - 1]]);
+      });
   };
+$(document).ready(() => {
+  
+//create the error box
+const $errorBox = $('<p>').addClass('error').text("!!!Empty tweet!!!");
+const $errorBox2 = $('<p>').addClass('error').text('!!!Tweet is too long!!!');
+//hide the errorBox
+$errorBox.prependTo($('.container')).hide();
+$errorBox2.prependTo($('.container')).hide();
+  
 
-}
-
-//initial tweets
- //renderTweets(data);
-
- const loadTweets = () => {
-  $.get('/tweets')
-    .then(data => {
-      renderTweets([data[data.length - 1]]);
-    });
-};
 
  $( "form" ).on( "submit", function( event ) {
   event.preventDefault();
   
+//empty input error
+if ($('textarea').val().length === 0) {
+  $errorBox.slideDown();      //open the errorBox
+  $errorBox2.hide();          //close the potential other errorBox
+
+  //inputs are too long
+} else if ($('textarea').val().length > 140) {
+  $errorBox2.slideDown();      //open the errorBox
+  $errorBox.hide();            //close the potential other errorBox
+} else {
+
+
+  $errorBox.slideUp();
+  $errorBox2.slideUp();
+
   $.post('/tweets', $( this ).serialize())
   .then(()=> {
     $('.counter').text('140');    //clear the counter
@@ -118,7 +124,9 @@ const renderTweets = tweets => {
     loadTweets();
   })
   .fail(error => console.log(error));
+}
 });
+
 $.get('/tweets')
 .then((data) => {
   renderTweets(data);

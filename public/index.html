@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/article.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/responsive.css" type="text/css" />
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -49,35 +50,22 @@
       
     </nav>
 
-    <header>
-      <div>
+    <header class="hheader">
+      <div class="dheader"></div>
           <img src="/images/profile-hex.png"> 
       </div>
-      <!-- <br> -->
       <div>
           <h2 id="h2"><b>Your </b>Name</h2>
       </div>
   </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
-      <!-- <div>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo enim minima rem cum, nesciunt impedit, sed ipsam exercitationem eligendi perferendis debitis consectetur asperiores molestiae unde possimus suscipit odio animi ratione!</p>
-    </div>
-   
-    <div>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore saepe, corporis asperiores aut voluptatum sequi facere error est deleniti magnam ex quas magni eveniet a aspernatur? In blanditiis porro sit.</p>
-    </div> -->
+    <main class="container"> 
     <br>
     <section class="new-tweet">
-      <!-- <h2>Compose Tweet</h2> -->
       <form>
-        <!-- <form method="POST" action="/tweets"> -->
-        
         <label for="tweet-text">What are you humming about?</label>
-        <!-- <div class="tweetBox"></div> -->
         <textarea class="tweetBox" name="text" id="tweet-text"></textarea>
-       <!-- </div>  -->
        <div >
           <button type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
