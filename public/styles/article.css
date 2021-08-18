@@ -74,7 +74,16 @@ footer {
 .tweetBox:hover .atPerson {
   visibility: visible;
 }
-.fontAwesome:hover {
+/* .fontAwesome:hover {
+  color: rgb(230, 163, 41);
+} */
+.fas.fa-flag:hover {
+  color: rgb(230, 163, 41);
+}
+.fas.fa-retweet:hover {
+  color: rgb(230, 163, 41);
+}
+.fas.fa-heart:hover {
   color: rgb(230, 163, 41);
 }
 /*
