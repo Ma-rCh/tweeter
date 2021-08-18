@@ -15,3 +15,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots and function demonstration
+1. Initial page desktop
+!['root'](https://github.com/Ma-rCh/tweeter/blob/master/desktop.png)
+2. Initial page mobile
+!['responsible'](https://github.com/Ma-rCh/tweeter/blob/master/desktop.png)
