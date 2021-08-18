@@ -97,16 +97,25 @@ const renderTweets = tweets => {
   };
 
 }
- renderTweets(data);
+
+//initial tweets
+ //renderTweets(data);
+
+ const loadTweets = () => {
+  $.get('/tweets')
+    .then(data => {
+      renderTweets([data[data.length - 1]]);
+    });
+};
 
  $( "form" ).on( "submit", function( event ) {
   event.preventDefault();
-  //console.log( $( this ).serialize() );
+  
   $.post('/tweets', $( this ).serialize())
   .then(()=> {
     $('.counter').text('140');    //clear the counter
     $('textarea').val("");  
-    // console.log('1');
+    loadTweets();
   })
   .fail(error => console.log(error));
 });
@@ -117,9 +126,9 @@ $.get('/tweets')
 });
 
 
-//toggle effects in create new tweeets on top right corner
-$('.createTweets').click(() => {
-  $('.new-tweet').toggle('slow', () => {
+// toggle effects in create new tweeets on top right corner
+$('.write').click(() => {
+  $('.new-tweet').toggle("slow", () => {
     $('textarea').focus();
   });
 });
