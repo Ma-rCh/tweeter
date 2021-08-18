@@ -5,12 +5,12 @@
    */
   .hheader {
     top: 200px;
-    width:30%;
+    width: 30%;
     float: left;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 3%;
+    margin: 2%;
   }
   .dheader {
     width: 80%;
